@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="Client.css">
+</head>
+<body>
+    <ul class="Nav">
+        <a href="index.html" style="padding: 0; " onmouseover="this.style.backgroundColor='transparent'">
+            <img class="logo"  src="LOGO.png" alt="Logo">
+        </a>
+            <li><a href="./client.html">Liste Clients</a></li>
+        <li><a href="Stock.html">Stock</a></li>
+    </ul>
+    <div class="containerr">
+        <h1>Clients List</h1>
+        <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="./client.html">Liste Clients</a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <div class="filt">
+                <h2>Filters</h2>
+                <div class="filter-bar">
+                    <h3>Type</h3>
+                    <label><input type="checkbox" value="Outil"> Outil</label>
+                    <label><input type="checkbox" value="Materiel"> Materiel</label>
+                    <label><input type="checkbox" value="Medicament"> Medicament</label>
+
+                    <h3>Qte</h3>
+                    <div class="qte-slider">
+                        <label for="qteRange">Range:</label>
+                        <input type="range" id="qteRange" min="0" max="100" value="50">
+                        <div class="slider-values">
+                            <span id="minValue">0</span>
+                            <span id="maxValue">50</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <div class="search-container">
+                    <input type="text" id="search" placeholder="Search Clients...">
+                    <button id="addButton" class="button">Add</button>
+                </div>
+
+                <table id="ClientsTable">
+                    <thead>
+                        <tr>
+                            <th>ID Clients</th>					
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Date de naissance</th>
+                            <th>Nombre de visites</th>
+                            <th>Date de rendez-vous</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clients Details Modal -->
+    <div id="ClientsDetailsModal" class="modal">
+        <div class="modal-content">
+            <span id="detailsClose" class="close">&times;</span>
+            <h2>Clients Details</h2>
+            <div class="details-content">
+                <p><strong>ID Client:</strong> <span id="detailsId_Client"></span></p>
+                <p><strong>Nom:</strong> <span id="detailsNom"></span></p>
+                <p><strong>Prenom:</strong> <span id="detailsPrenom"></span></p>
+                <p><strong>Date de naissance:</strong> <span id="detailsDate_Naiss"></span></p>
+                <p><strong>Nombre de visites:</strong> <span id="detailsnbr_Visites"></span></p>
+                <p><strong>Date de rendez-vous:</strong> <span id="detailsDate_RDV"></span></p>
+            </div>
+            <div class="button-container">
+                <button id="editButton" class="button">Edit</button>
+                <button id="deleteButton" class="button button-red">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Clients Modal -->
+    <div id="editClientsModal" class="modal">
+        <div class="modal-content">
+            <span id="editClose" class="close">&times;</span>
+            <h2>Edit Client</h2>
+            <label for="modalID_Client" >ID Client:</label>
+            <input type="text" id="modalID_Client" readonly>
+            <label for="modalNom">Nom:</label>
+            <input type="text" id="modalNom">
+            <label for="modalPrenom">Prenom:</label>
+            <input type="text" id="modalPrenom">
+            <label for="modalDate_naiss">Date de naissance:</label>
+            <input type="date" id="modalDate_naiss">
+            <label for="modalnbr_Visites">Nombre de visites:</label>
+            <input type="number" id="modalnbr_Visites">
+            <label for="modalDate_RDV">Date de rendez-vous:</label>
+            <input type="date" id="modalDate_RDV">
+            <div class="button-container">
+                <button id="saveButton" class="button">Save</button>
+                <button class="button" onclick="document.getElementById('editClientsModal').style.display='none'">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html>

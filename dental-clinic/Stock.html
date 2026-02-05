@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste Produits</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="Stock.css">
+<body>
+    <ul class="Nav">
+        <a href="./Stock.html" style="padding: 0; " onmouseover="this.style.backgroundColor='transparent'">
+            <img class="logo"  src="LOGO.png" alt="Logo">
+        </a>
+            <li><a href="./client.html">Liste Clients</a></li>
+        <li><a href="Stock.html">Stock</a></li>
+        <a  href="login.html" class="btn btn-primary py-2 px-4 ms-3" id="signOutButton" onclick="signOut()">Logout</a>
+    </ul>
+    <div class="containerr">
+        <h1>Product List</h1>
+        <nav aria-label="breadcrumb">
+            <ul class="breadcrumb">
+                <li>Home</a></li>
+                <li><a href="./Stock.html">Stock</a></li>
+            </ul>
+        </nav>
+
+
+        <div class="container">
+            <div class="filt">
+                <h2>Filters</h2>
+                <div class="filter-bar">
+                    <h3>Type</h3>
+                    <label><input type="checkbox" value="Outil"> Outil</label>
+                    <label><input type="checkbox" value="Materiel"> Materiel</label>
+                    <label><input type="checkbox" value="Medicament"> Medicament</label>
+
+                    <h3>Qte</h3>
+                    <div class="qte-slider">
+                        <label for="qteRange">Range:</label>
+                        <input type="range" id="qteRange" min="0" max="100" value="50">
+                        <div class="slider-values">
+                            <span id="minValue">0</span>
+                            <span id="maxValue">50</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <div class="search-container">
+                    <input type="text" id="search" placeholder="Search products...">
+                    <button id="addButton" class="button">Add</button>
+                </div>
+
+                <table id="productTable">
+                    <thead>
+                        <tr>
+                            <th>Ref</th>
+                            <th>Libellé</th>
+                            <th>Qte</th>
+                            <th>Type</th>
+                            <th>Date d'achat</th>
+                            <th>Date d'Exp</th>
+                            <th>Fournisseur</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div id="productDetailsModal" class="modal">
+        <div class="modal-content">
+            <span id="detailsClose" class="close">&times;</span>
+            <h2>Product Details</h2>
+            <div class="details-content">
+                <p><strong>Ref:</strong> <span id="detailsRef"></span></p>
+                <p><strong>Libellé:</strong> <span id="detailsLibelle"></span></p>
+                <p><strong>Qte:</strong> <span id="detailsQte"></span></p>
+                <p><strong>Type:</strong> <span id="detailsType"></span></p>
+                <p><strong>Date d'achat:</strong> <span id="detailsDateAchat"></span></p>
+                <p><strong>Date d'Exp:</strong> <span id="detailsDateExp"></span></p>
+                <p><strong>Fournisseur:</strong> <span id="detailsFournisseur"></span></p>
+            </div>
+            <div class="button-container">
+                <button id="editButton" class="button">Edit</button>
+                <button id="deleteButton" class="button button-red">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="editProductModal" class="modal">
+        <div class="modal-content">
+            <span id="editClose" class="close">&times;</span>
+            <h2>Edit Product</h2>
+            <label for="modalRef">Ref:</label>
+            <input type="text" id="modalRef">
+            <label for="modalLibelle">Libellé:</label>
+            <input type="text" id="modalLibelle">
+            <label for="modalQte">Qte:</label>
+            <input type="number" id="modalQte">
+            <label for="modalType">Type:</label>
+            <select id="modalType">
+                <option value="" disabled selected>Choisissez un type:</option>
+                <option value="Medicament">Medicament</option>
+                <option value="Materiel">Materiel</option>
+                <option value="Outil">Outil</option>
+            </select>
+            <label for="modalFournisseur">Fournisseur:</label>
+            <input type="text" id="modalFournisseur">
+            <div id="expirationDateContainer">
+                <label for="modalDateExp">Date d'expiration:</label>
+                <input type="date" id="modalDateExp">
+            </div>
+            <input type="hidden" id="modalDateAchat">
+            <div class="button-container">
+                <button id="saveButton" class="button">Save</button>
+                <button class="button" onclick="document.getElementById('editProductModal').style.display='none'">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<a href="login.html">fsgujhiuhiuh</a>
+
+
+
+    <script src="Stock.js"></script>
+    </body>
+    </html>

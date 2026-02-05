@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.login.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="script.js"></script>
+    <!--<script> src="main.js"</SCript>-->
+    
+    <title>Se connecter</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+            <img class="nav_brand" src="img/462560022_889697156699744_7086023414157412340_n.jpg" alt="">
+            
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                
+                <a href="service.html" class="nav-item nav-link">Service</a>
+                <a href="price.html" class="nav-item nav-link active">Pricing Plan</a>
+                        <a href="team.html" class="nav-item nav-link active">Medications</a>
+                        <a href="appointment.html" class="nav-item nav-link active">Appointment</a>
+                <div class="nav-item dropdown">
+                    
+                    <div class="dropdown-menu m-0">
+                        <a href="price.html" class="dropdown-item">Pricing Plan</a>
+                        <a href="team.html" class="dropdown-item">Our Dentist</a>
+                        <a href="appointment.html" class="dropdown-item">Appointment</a>
+                    </div>
+                </div>
+                
+            </div>
+            <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
+            <a href="login.html" class="btn btn-primary py-2 px-4 ms-3" id="loginButton">Login</a>
+            <a  href="login.html" class="btn btn-primary py-2 px-4 ms-3" id="signOutButton" onclick="signOut()" style="display:none" >Logout</a>
+        </div> 
+    </nav>
+    <div class="container">
+        <!--Data or Content-->
+        <div class="box-1">
+            <div class="content-holder">
+                <h2>Bienvenue!</h2>
+               
+                <button class="button-1" onclick="signup()">Sign up</button>
+                <button class="button-2" onclick="login()">Login</button>
+            </div>
+        </div>
+  
+        
+        <!--Forms-->
+        <div class="box-2">
+            <div class="login-form-container">
+                <form method="POST" action="login.php">
+                <h1>Login Form</h1>
+                <input type="email" placeholder="Email" name="emaill" class="input-field" required>
+                <br><br>
+                <input type="password" placeholder="Mot de passe" name="passw" class="input-field" required>
+                <br><br>
+                <div id="loginError" style="display: none; color: red; padding: 0px; margin-bottom: 10px;"></div>
+                <button class="login-button" type="submit" >Login</button>
+                </form>
+            </div>
+  
+  
+  
+  <!--Create Container for Signup form-->
+  <div class="signup-form-container">
+    <form method="POST" action="signup.php" id="signup">
+    <h3>Sign Up Form</h3>
+    <input type="text" placeholder="Nom" name="nom" class="input-field" required>
+    <br><br>
+    <input type="text" placeholder="Prenom" name="prenom" class="input-field" required>
+    <br><br>
+    <input type="text" placeholder="Date de naissance" name="dateN" class="input-field" onfocus="this.type='date'"  onblur="if(!this.value) this.type='text'" required>
+    <br><br>
+    <input type="email" placeholder="E-mail" name="email" class="input-field" required>
+    <br>
+    <div id="signuperror" style="color: red; padding-bottom: 0px;"></div>
+    <br>
+    <input type="password" placeholder="Mot de passe" name="password" class="input-field" required minlength="8">
+    <br>
+    <div class="phone-container">
+        <span class="prefix">+213</span>
+        <div class="separator"></div>
+        <input type="tel" id="phone" placeholder="00 - 00 - 00 - 00 - 00" name="Tel" class="input-field">
+    </div>
+    <button class="signup-button" type="submit" >Sign Up</button>
+</form>
+<script src="login.js"></script>
+
+        
+</body>
+</html>

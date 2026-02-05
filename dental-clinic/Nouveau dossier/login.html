@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.login.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script> src="js/script.js"></script>
+    <script>src="js/main.js"</script>
+    <title>Se connecter</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0" id="abc">
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button> 
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                
+                <a href="service.html" class="nav-item nav-link">Service</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="price.html" class="dropdown-item">Pricing Plan</a>
+                        <a href="team.html" class="dropdown-item">Our Dentist</a>
+                        <a href="appointment.html" class="dropdown-item">Appointment</a>
+                    </div>
+                </div>
+                
+            </div>
+            <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
+            <a href="login.html" class="btn btn-primary py-2 px-4 ms-3">Login</a>
+        </div> 
+    </nav>
+    <div class="container">
+        <!--Data or Content-->
+        <div class="box-1">
+            <div class="content-holder">
+                <h2>Bienvenue!</h2>
+               
+                <button class="button-1" onclick="signup()">Sign up</button>
+                <button id="loginb" class="button-2" onclick="login()">Login</button>
+            </div>
+        </div>
+  
+        
+        <!--Forms-->
+        <div class="box-2">
+            <div class="login-form-container">
+                <h1>Login Form</h1>
+                <input id="nom" type="text" placeholder="Nom" class="input-field">
+                <br><br>
+                <input id="prenom" type="password" placeholder="Mot de passe" class="input-field">
+                <br><br>
+                <button id="loginb" class="login-button" type="button">Login</button>
+            </div>
+  
+  
+  <!--Create Container for Signup form-->
+        <div class="signup-form-container">
+            <h1>Sign Up Form</h1>
+            <input type="text" placeholder="Nom" class="input-field">
+            <br><br>
+            <input type="password" placeholder="Mot de passe" class="input-field">
+            <br><br>
+            <select name="profile" placeholder="Profile" size=1>
+                <option value="client">client</option>
+                <option value="medecin">medecin</option>
+                <option value="secretaire">secraitere</option>
+            </select>
+            <br><br>
+            <button id="loginb" class="signup-button" type="button">Sign Up</button>
+
+            <script>
+                function login() {
+                    // هنا يمكنك إضافة منطق التحقق من بيانات تسجيل الدخول
+                    // إذا كانت بيانات تسجيل الدخول صحيحة، قم بتحديث حالة تسجيل الدخول
+                    localStorage.setItem('isLoggedIn', 'true'); // تخزين حالة تسجيل الدخول في localStorage
+                    window.location.href = 'appointment.html'; // الانتقال إلى صفحة المواعيد
+                }
+            
+                function signup() {
+                    // منطق التسجيل
+                    localStorage.setItem('isLoggedIn', 'true'); // تخزين حالة تسجيل الدخول في localStorage
+                    window.location.href = 'appointment.html'; // الانتقال إلى صفحة المواعيد
+                }
+            </script>
+        
+            
+
+        
+</body>
+</html>
